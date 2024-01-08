@@ -1,0 +1,20 @@
+:root {
+  --red: hsl(0, 100%, 50%);
+  --background-light: hsl(0, 0%, 93%);
+  --background-mid: hsl(0, 0%, 80%);
+  --geist-foreground: hsl(0, 0%, 37%);
+  --highlight: hsl(0, 0%, 67%);
+  --text: hsl(0, 0%, 8%);
+  --transparent20: hsla(0, 0%, 0%, 0.2);
+
+  box-sizing: border-box;
+  color: var(--text);
+  font-size: 62.5%;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+a:visited {
+  color: var(--text);
+}

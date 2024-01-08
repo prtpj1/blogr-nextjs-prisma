@@ -151,7 +151,7 @@ const Header: React.FC = () => {
           }
           p {
             display: inline-block;
-            font-size: 13px;
+            font-size: 1.3rem;
             padding-right: 1rem;
           }
           a + a {
