@@ -6,7 +6,9 @@ import Head from 'next/head';
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <SessionProvider session={pageProps.session}>
-
+      <Head>
+        <title> NextJS Blog</title>
+      </Head>
       <Component {...pageProps} />
     </SessionProvider>
   );

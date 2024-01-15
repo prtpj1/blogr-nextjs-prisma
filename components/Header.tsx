@@ -80,8 +80,8 @@ const Header: React.FC = () => {
   if (!session) {
     right = (
       <div className='right'>
-        <Link href='/api/auth/signin' legacyBehavior>
-          <a data-active={isActive('/signup')}>Log in</a>
+        <Link href='/api/auth/signin' data-active={isActive('/signup')} >
+          Log in
         </Link>
         <style jsx>{`
           a {

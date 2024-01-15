@@ -1,6 +1,5 @@
 import React from "react"
 import { GetStaticProps } from "next"
-import Head from 'next/head'
 import prisma from '../lib/prisma'
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"

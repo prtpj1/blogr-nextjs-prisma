@@ -1,17 +1,22 @@
 import { getSession } from 'next-auth/react';
 import prisma from '../../../lib/prisma';
+import { getServerSession } from 'next-auth';
+import { authHandler } from '../auth/[...nextauth]';
+
+interface Session {
+    user?: {
+        email?: string,
+    }
+}
 
 export default async function handle(req: any, res: any) {
     const { title, content } = req.body;
-    console.log('🚀  title:', title);
-    console.log('🚀  content:', content);
 
-    const session = await getSession({ req });
+    const session: Session = await getServerSession(req, res, authHandler);
     if (!session || !session.user.email) {
         res.status(401).json({ error: 'You must be logged in to create a post.' });
         return;
     }
-
 
     const result = await prisma.post.create({
         data: {

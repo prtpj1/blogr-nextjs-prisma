@@ -4,9 +4,11 @@ import prisma from '../lib/prisma';
 import Post, { PostProps } from '../components/Post';
 import React from 'react';
 import Layout from '../components/Layout';
+import { getServerSession } from "next-auth/next"
+import { authHandler } from './api/auth/[...nextauth]';
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
-    const session = await getSession({ req });
+    const session = await getServerSession(req, res, authHandler);
 
     if (!session) {
         res.statusCode = 403;
