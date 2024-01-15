@@ -12,17 +12,17 @@ const Header: React.FC = () => {
 
   let left = (
     <div className="left">
-      <Link href="/" legacyBehavior>
-        <a className="bold" data-active={isActive("/")}>
+      <Link href="/">
+        <span className="bold" data-active={isActive("/")}>
           Feed
-        </a>
+        </span>
       </Link>
       <style jsx>{`
         .bold {
           font-weight: bold;
         }
 
-        a {
+        span {
           color: #000;
           display: inline-block;
           text-decoration: none;
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
           color: gray;
         }
 
-        a + a {
+        span + span {
           margin-left: 1rem;
         }
       `}</style>
@@ -44,14 +44,14 @@ const Header: React.FC = () => {
   if (status === 'loading') {
     left = (
       <div className='left'>
-        <Link href="/" legacyBehavior>
-          <a className='bold' data-active={isActive('/')}>Feed</a>
+        <Link href="/">
+          <span className='bold' data-active={isActive('/')}>Feed</span>
         </Link>
         <style jsx>{`
           .bold {
             font-weight: bold;
           }
-          .a {
+          .span {
             color: var(--geist-foreground);
             display: inline-block;
             text-decoration: none;
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
           .left a[data-active='true'] {
             color: gray
           }
-          a + a {
+          span + span {
             margin-left: 1rem
           }
         `}</style>
@@ -80,22 +80,22 @@ const Header: React.FC = () => {
   if (!session) {
     right = (
       <div className='right'>
-        <Link href='/api/auth/signin' data-active={isActive('/signup')} >
-          Log in
+        <Link href="/api/auth/signin">
+          <span data-active={isActive('/signup')}>Log in</span>
         </Link>
         <style jsx>{`
-          a {
+          span {
             color: var(--geist-foreground);
             display: inline-block;
             text-decoration: none;
           }
-          a + a {
+          span + span {
             margin-left: 1rem;
           }
           .right {
             margin-left: auto;
           }
-          .right a {
+          .right span {
             border: 1px solid var(--geist-foreground);
             border-radius: 3px;
             padding: 0.5rem 1rem;
@@ -108,17 +108,17 @@ const Header: React.FC = () => {
   if (session) {
     left = (
       <div className='left'>
-        <Link href='/' legacyBehavior>
-          <a className='bold' data-active={isActive('/')}>Feed</a>
+        <Link href='/'>
+          <span className='bold' data-active={isActive('/')}>Feed</span>
         </Link>
-        <Link href='/drafts' legacyBehavior>
-          <a data-active={isActive('/drafts')}>My Drafts</a>
+        <Link href='/drafts'>
+          <span data-active={isActive('/drafts')}>My Drafts</span>
         </Link>
         <style jsx>{`
           .bold {
             font-weight: bold;
           }
-          a {
+          span {
             color: var(--geist-foreground);
             display: inline-block;
             text-decoration: none;
@@ -126,7 +126,7 @@ const Header: React.FC = () => {
           .left a[data-active='true'] {
             color: gray;
           }
-          a + a {
+          span + span {
             margin-left: 1rem;
           }
         `}</style>
@@ -135,16 +135,16 @@ const Header: React.FC = () => {
     right = (
       <div className='right'>
         <p>{session.user.name} ({session.user.email})</p>
-        <Link href='/create' legacyBehavior>
+        <Link href="/create">
           <button>
-            <a> New Post</a>
+            <span>New post</span>
           </button>
         </Link>
         <button onClick={() => signOut()}>
           <a>Log Out</a>
         </button>
         <style jsx>{`
-          a {
+          span {
             color: var(--geist-foreground);
             display: inline-block;
             text-decoration: none;
@@ -154,13 +154,13 @@ const Header: React.FC = () => {
             font-size: 1.3rem;
             padding-right: 1rem;
           }
-          a + a {
+          span + span {
             margin-left: 1rem;
           }
           .right {
             margin-left: auto;
           }
-          .right a {
+          .right span {
             border: 1px solid var(--geist-foreground);
             border-radius: 3px;
             padding: 0.5rem 1rem;

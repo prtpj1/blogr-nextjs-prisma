@@ -90,6 +90,6 @@ var Drafts = function (props) {
             react_2["default"].createElement("h1", null, "My Drafts"),
             react_2["default"].createElement("main", null, props.drafts.map(function (post) { return (react_2["default"].createElement("div", { className: 'post', key: post.id },
                 react_2["default"].createElement(Post_1["default"], { post: post }))); }))),
-        react_2["default"].createElement("style", { jsx: true }, "\n                .post {\n                    background: var(--geist-background);\n                    transition: box-shadow 0.1s ease-in;\n                }\n                .post:hover {\n                    box-shadow: 1px 1px 3px var(--highlight);\n                }\n                .post + .post {\n                    margin-top: 2rem;\n                }\n            ")));
+        react_2["default"].createElement("style", { jsx: true }, "\n                .post {\n                    background: var(--geist-background);\n                    border: 1px dotted var(--highlight);\n                    transition: box-shadow 0.1s ease-in;\n                }\n                .post:hover {\n                    border: none;\n                    box-shadow: 1px 1px 3px var(--highlight);\n                    cursor: pointer;\n                }\n                .post + .post {\n                    margin-top: 2rem;\n                }\n            ")));
 };
 exports["default"] = Drafts;

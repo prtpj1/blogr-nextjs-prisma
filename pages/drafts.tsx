@@ -62,10 +62,13 @@ const Drafts: React.FC<Props> = (props) => {
             <style jsx>{`
                 .post {
                     background: var(--geist-background);
+                    border: 1px dotted var(--highlight);
                     transition: box-shadow 0.1s ease-in;
                 }
                 .post:hover {
+                    border: none;
                     box-shadow: 1px 1px 3px var(--highlight);
+                    cursor: pointer;
                 }
                 .post + .post {
                     margin-top: 2rem;
